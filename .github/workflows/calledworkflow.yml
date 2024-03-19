@@ -24,5 +24,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo $parameter1
-          echo $parameter2
+          echo $parameter1 >> param.txt
+          echo $parameter2 >> param.txt
