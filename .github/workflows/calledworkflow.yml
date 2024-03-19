@@ -25,8 +25,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           if [ -f "param.txt" ]; then
-           echo $parameter1 >> param.txt
-           echo $parameter2 >> param.txt
+           echo $parameter1 >> $GITHUB_WORKSPACE/param.txt
+           echo $parameter2 >> $GITHUB_WORKSPACE/param.txt
           else
            echo "File open error"
           fi
