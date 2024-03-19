@@ -18,14 +18,7 @@ jobs:
       - name: Run a one-line script
         run: echo Cloud Quick Labs!
 
-      - name: Run a multi-line script
+      - name: Create file
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          if [ -f "param.txt" ]; then
-           echo $parameter1 >> $GITHUB_WORKSPACE/param.txt
-           echo $parameter2 >> $GITHUB_WORKSPACE/param.txt
-          else
-           echo "File open error"
-          fi
-        
+          echo $parameter1 > param.txt
+          echo $parameter2 >> $GITHUB_WORKSPACE/param.txt
