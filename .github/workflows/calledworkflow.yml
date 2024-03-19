@@ -21,4 +21,4 @@ jobs:
       - name: Create file
         run: |
           echo $parameter1 > param.txt
-          echo $parameter2 >> $GITHUB_WORKSPACE/param.txt
+          echo $parameter2 >> param.txt
