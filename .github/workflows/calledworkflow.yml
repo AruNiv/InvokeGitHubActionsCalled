@@ -14,19 +14,16 @@ jobs:
        parameter2: ${{ github.event.client_payload.parameter2 }}
 
     steps:
-
       - uses: actions/checkout@v3
-
       - name: Run a one-line script
         run: echo Cloud Quick Labs!
 
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          if [ -f "param.txt" ]; then
-           echo $parameter1 >> $GITHUB_WORKSPACE/param.txt
-           echo $parameter2 >> $GITHUB_WORKSPACE/param.txt
-          else
-           echo "File open error"
-          fi
+      - name: Write data to file
+      - uses: DamianReeves/write-file-action@master
+        with:
+          path: ${{ $GITHUB_WORKSPACE }}/param.txt
+           contents:|
+                   echo $parameter1
+                   echo $parameter2
+           write-mode:append
+        
