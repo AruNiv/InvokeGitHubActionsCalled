@@ -24,8 +24,7 @@ jobs:
           echo $parameter2
 
       - name: create-json
-        id: create-json
-        uses: jsdaniell/create-json@v1.2.3
-        with:
-         name: "new-json-file.json"
-         json: '{"Param-1":$parameter1, "Param-2":$parameter2}'
+      - uses: "finnp/create-file-action@master"
+        env:
+         FILE_NAME: "dir/fileName.txt"
+         FILE_DATA: "file content"
