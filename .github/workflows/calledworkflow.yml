@@ -18,7 +18,14 @@ jobs:
       - name: Run a one-line script
         run: echo Cloud Quick Labs!
 
-      - name: Create file
+      - name: Output param values
         run: |
-          echo $parameter1 > param.txt
-          echo $parameter2 >> param.txt
+          echo $parameter1
+          echo $parameter2
+
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.3
+        with:
+         name: "new-json-file.json"
+         json: '{"Param-1":$parameter1, "Param-2":$parameter2}'
