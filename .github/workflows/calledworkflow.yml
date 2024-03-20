@@ -33,9 +33,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: 1arp/create-a-file-action@0.4.4
         with:
-          path: $GITHUB_WORKSPACE
-          isAbsolutePath: false
-          file: 'foo.bar'
+          path: $GITHUB_WORKSPACE/param.txt
+          isAbsolutePath: true
+          file: 'param.txt'
           content: |
             Hello
             World
