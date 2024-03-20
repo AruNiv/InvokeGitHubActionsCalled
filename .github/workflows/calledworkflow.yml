@@ -22,6 +22,8 @@ jobs:
         run: |
           echo $parameter1
           echo $parameter2
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
 
 
   createFile:
