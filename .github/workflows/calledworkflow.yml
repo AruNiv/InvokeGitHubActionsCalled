@@ -23,8 +23,17 @@ jobs:
           echo $parameter1
           echo $parameter2
 
-      - name: create-json
-      - uses: "finnp/create-file-action@master"
-        env:
-         FILE_NAME: "param.txt"
-         FILE_DATA: "file content"
+
+  createFile:
+    name: Create A File
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: 1arp/create-a-file-action@0.4.4
+        with:
+          path: 'src'
+          isAbsolutePath: false
+          file: 'foo.bar'
+          content: |
+            Hello
+            World
