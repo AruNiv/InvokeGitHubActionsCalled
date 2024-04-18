@@ -30,6 +30,6 @@ jobs:
           date >> param.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
+          git pull
           git commit -m "param"
           git push
